@@ -2,37 +2,47 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Componente principal sin estilos adicionales - Tailwind maneja todo */
+.calibration-panel {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #f9fafb;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para cartas de votación */
+.voting-card {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.voting-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.voting-card.selected {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
+}
+
+/* Estilos para el timer */
+.timer-display {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Animación para progreso */
+.progress-bar {
+  transition: width 0.3s ease-in-out;
+}
+
+/* Estilos responsivos adicionales */
+@media (max-width: 640px) {
+  .phase-navigation {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .phase-navigation::-webkit-scrollbar {
+    display: none;
   }
 }
